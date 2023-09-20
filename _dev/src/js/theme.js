@@ -25,7 +25,6 @@
 import 'bootstrap/js/src/util';
 import 'bootstrap/js/src/alert';
 import 'bootstrap/js/src/button';
-import  '../node_modules/bootstrap/js/src/collapse.js';
 import 'bootstrap/js/src/collapse';
 import 'bootstrap/js/src/dropdown';
 import 'bootstrap/js/src/modal';
@@ -33,7 +32,7 @@ import 'bootstrap/js/src/popover';
 import 'bootstrap/js/src/tab';
 import 'bootstrap/js/src/toast';
 import 'bootstrap/js/src/tooltip';
-import 'bootstrap-touchspin';
+// import 'bootstrap-touchspin';
 import './lib/slick.min';
 import './lib/jquery.hoverIntent.min';
 import SlickSlider from './components/slick';
@@ -53,7 +52,9 @@ import EventEmitter from 'events';
 
 
 import './components/block-cart';
-import lazysizes from 'lazysizes'
+// import lazysizes from 'lazysizes'
+
+import '../css/theme.scss';
 
 
 // "inherit" EventEmitter

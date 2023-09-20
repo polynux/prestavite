@@ -1,10 +1,10 @@
-name: classic-rocket
-display_name: Classic Rocket
-version: 3.1.0
+name: prestavite
+display_name: PrestaVite
+version: 1.1.0
 author:
-  name: "Prestarocket"
-  email: "contact@prestarocket.com"
-  url: "http://www.prestarocket.com"
+  name: "polynux"
+  email: "polynux.dev@gmail.com"
+  url: "https://github/polynux/prestavite"
 
 meta:
   compatibility:
