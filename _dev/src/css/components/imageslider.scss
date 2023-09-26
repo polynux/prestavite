@@ -4,9 +4,9 @@
     display: none;
   }
 }
-.slider-caption{
+.slider-caption {
   position: absolute;
-  top:10%;
+  top: 10%;
   left: 90px;
   margin-bottom: 0;
   color: #fff;
@@ -14,9 +14,9 @@
 }
 
 .slick-slide:not(.slick-current) .img-carousel.lazyload {
-  display: none!important;
+  display: none !important;
 }
-.slick-slide figure{
+.slick-slide figure {
   position: absolute;
   top: 0;
 }

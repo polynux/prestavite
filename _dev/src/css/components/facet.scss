@@ -14,10 +14,9 @@
   }
 }
 
-.facet__block:not(:last-child){
+.facet__block:not(:last-child) {
   margin-bottom: $spacer;
   border-bottom: 1px solid $card-border-color;
-
 }
 
 .facet__header {
@@ -35,57 +34,52 @@
   text-overflow: ellipsis;
 }
 
-
 .left-column .search_filters {
   @extend .card-block;
 }
 
-.custom-color{
-  &.custom-control{
+.custom-color {
+  &.custom-control {
     padding-left: 0;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
   .custom-control-label:before,
-  .custom-control-label:after
-  {
-    display:none
+  .custom-control-label:after {
+    display: none;
   }
-  .color{
-    margin-right: .25rem;
+  .color {
+    margin-right: 0.25rem;
     border: none;
   }
-  .color__label{
+  .color__label {
     //dis
     line-height: 1.25;
     display: inline-block;
   }
-  &.custom-control--active{
-    .color{
+  &.custom-control--active {
+    .color {
       border: 2px solid black;
     }
   }
 }
 
-
-
-.btn--clearfilter{
+.btn--clearfilter {
   margin-bottom: $spacer;
 }
 //
-.active-filter__title{
+.active-filter__title {
   margin-bottom: $spacer/2;
   font-weight: bold;
 }
-.active_filters__list{
+.active_filters__list {
 }
-.active_filters{
+.active_filters {
   background-color: $bg-dark;
-padding: $spacer $spacer ($spacer*.75);
-  margin-bottom: $spacer*1.25;
+  padding: $spacer $spacer ($spacer * 0.75);
+  margin-bottom: $spacer * 1.25;
 }
-.active_filters__list-item{
+.active_filters__list-item {
   margin-bottom: $spacer/4;
-
 }
 
 //.active_filters{
@@ -102,9 +96,6 @@ padding: $spacer $spacer ($spacer*.75);
 // margin-right: $spacer;
 //}
 
-
-
-
 .faceted-overlay {
   left: 0;
   top: 0;
@@ -112,7 +103,7 @@ padding: $spacer $spacer ($spacer*.75);
   height: 100%;
   position: fixed;
   background-color: rgba(25, 25, 25, 0.5);
-  z-index: $zindex-modal+1;
+  z-index: $zindex-modal + 1;
 }
 
 .faceted-overlay .overlay__inner {
@@ -182,14 +173,14 @@ padding: $spacer $spacer ($spacer*.75);
 }
 
 #search_filters .ui-slider .ui-slider-handle {
-  top: -.45em;
+  top: -0.45em;
   width: 0.4em;
   background: #fff;
   border: 1px solid #555;
 }
 
 #search_filters .ui-slider-horizontal {
-  height: .4em;
+  height: 0.4em;
 }
 
 /**

@@ -22,43 +22,42 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  */
-import $ from 'jquery';
-import prestashop from 'prestashop';
+import $ from "jquery";
 import SlickSlider from "./components/slick";
 
-
-$(document).ready(() => {
-  prestashop.on('clickQuickView', function (elm) {
+$(() => {
+  prestashop.on("clickQuickView", function (elm) {
     let data = {
-      'action': 'quickview',
-      'id_product': elm.dataset.idProduct,
-      'id_product_attribute': elm.dataset.idProductAttribute,
+      action: "quickview",
+      id_product: elm.dataset.idProduct,
+      id_product_attribute: elm.dataset.idProductAttribute,
     };
-    $.post(prestashop.urls.pages.product, data, null, 'json').then(function (resp) {
-      $('body').append(resp.quickview_html);
-      let productModal = $(`#quickview-modal-${resp.product.id}-${resp.product.id_product_attribute}`);
-      productModal.modal('show');
+    $.post(prestashop.urls.pages.product, data, null, "json")
+      .then(function (resp) {
+        $("body").append(resp.quickview_html);
+        let productModal = $(
+          `#quickview-modal-${resp.product.id}-${resp.product.id_product_attribute}`,
+        );
+        productModal.modal("show");
 
-      productModal.on('hidden.bs.modal', function () {
-        productModal.remove();
-      });
-      productModal.on('shown.bs.modal', function () {
+        productModal.on("hidden.bs.modal", function () {
+          productModal.remove();
+        });
+        productModal.on("shown.bs.modal", function () {
           productConfig(productModal);
+        });
+      })
+      .fail((resp) => {
+        prestashop.emit("handleError", {
+          eventType: "clickQuickView",
+          resp: resp,
+        });
       });
-    }).fail((resp) => {
-      prestashop.emit('handleError', {eventType: 'clickQuickView', resp: resp});
-    });
   });
 
   var productConfig = (qv) => {
-      let slickSlider = new SlickSlider();
-      slickSlider.init();
-    qv.find('#quantity_wanted').TouchSpin({
-      buttondown_class: 'btn js-touchspin',
-      buttonup_class: 'btn js-touchspin',
-      min: 1,
-      max: 1000000
-    });
+    let slickSlider = new SlickSlider();
+    slickSlider.init();
   };
 
   const parseSearchUrl = function (event) {
@@ -67,49 +66,55 @@ $(document).ready(() => {
     }
 
     if ($(event.target).parent()[0].dataset.searchUrl === undefined) {
-      throw new Error('Can not parse search URL');
+      throw new Error("Can not parse search URL");
     }
 
     return $(event.target).parent()[0].dataset.searchUrl;
   };
 
-  $('body').on('change', '#search_filters input[data-search-url]', function (event) {
-    prestashop.emit('updateFacets', parseSearchUrl(event));
+  $("body").on(
+    "change",
+    "#search_filters input[data-search-url]",
+    function (event) {
+      prestashop.emit("updateFacets", parseSearchUrl(event));
+    },
+  );
+
+  $("body").on("click", ".js-search-filters-clear-all", function (event) {
+    prestashop.emit("updateFacets", parseSearchUrl(event));
   });
 
-  $('body').on('click', '.js-search-filters-clear-all', function (event) {
-    prestashop.emit('updateFacets', parseSearchUrl(event));
-  });
-
-  $('body').on('click', '.js-search-link', function (event) {
+  $("body").on("click", ".js-search-link", function (event) {
     event.preventDefault();
-    prestashop.emit('updateFacets', $(event.target).closest('a').get(0).href);
+    prestashop.emit("updateFacets", $(event.target).closest("a").get(0).href);
   });
 
-  $('body').on('change','#select-sort-order', function () {
-      var urlsearch = $(this).val();
-      prestashop.emit('updateFacets',urlsearch);
+  $("body").on("change", "#select-sort-order", function () {
+    var urlsearch = $(this).val();
+    prestashop.emit("updateFacets", urlsearch);
   });
 
-  $('body').on('change', '#search_filters select', function (event) {
-      var urlsearch = $(this).val();
-    prestashop.emit('updateFacets', urlsearch);
+  $("body").on("change", "#search_filters select", function (event) {
+    var urlsearch = $(this).val();
+    prestashop.emit("updateFacets", urlsearch);
   });
 
-  prestashop.on('updateProductList', (data) => {
+  prestashop.on("updateProductList", (data) => {
     updateProductListDOM(data);
     window.scrollTo(0, 0);
   });
 });
 
-function updateProductListDOM (data) {
-  $('#search_filters').replaceWith(data.rendered_facets);
-  $('#js-active-search-filters').replaceWith(data.rendered_active_filters);
-  $('#js-product-list-top').replaceWith(data.rendered_products_top);
-  $('#js-product-list').replaceWith(data.rendered_products);
-  $('#js-product-list-bottom').replaceWith(data.rendered_products_bottom);
-  if (typeof(data.rendered_products_header) !== 'undefined' && data.rendered_products_header) {
-      $('#js-product-list-header').replaceWith(data.rendered_products_header);
+function updateProductListDOM(data) {
+  $("#search_filters").replaceWith(data.rendered_facets);
+  $("#js-active-search-filters").replaceWith(data.rendered_active_filters);
+  $("#js-product-list-top").replaceWith(data.rendered_products_top);
+  $("#js-product-list").replaceWith(data.rendered_products);
+  $("#js-product-list-bottom").replaceWith(data.rendered_products_bottom);
+  if (
+    typeof data.rendered_products_header !== "undefined" &&
+    data.rendered_products_header
+  ) {
+    $("#js-product-list-header").replaceWith(data.rendered_products_header);
   }
-
 }

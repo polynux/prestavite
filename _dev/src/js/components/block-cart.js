@@ -22,29 +22,28 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  */
-import prestashop from 'prestashop';
-import $ from 'jquery';
+import prestashop from "prestashop";
+import $ from "jquery";
 
 prestashop.blockcart = prestashop.blockcart || {};
 
 prestashop.blockcart.showModal = (html) => {
   function getBlockCartModal() {
-    return $('#blockcart-modal');
+    return $("#blockcart-modal");
   }
 
   let $blockCartModal = getBlockCartModal();
-  if ($blockCartModal.length){
+  if ($blockCartModal.length) {
     $blockCartModal.remove();
   }
 
-  $('body').append(html);
+  $("body").append(html);
 
   $blockCartModal = getBlockCartModal();
-  $blockCartModal.modal('show').on('hidden.bs.modal', (event) => {
-    prestashop.emit('updateProduct', {
+  $blockCartModal.modal("show").on("hidden.bs.modal", (event) => {
+    prestashop.emit("updateProduct", {
       reason: event.currentTarget.dataset,
-      event: event
+      event: event,
     });
   });
 };
-

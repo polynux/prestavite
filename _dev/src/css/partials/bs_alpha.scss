@@ -1,11 +1,16 @@
-
-.col-xs-12{
+.col-xs-12 {
   @extend .col-12;
 }
 
-.float-xs-left  { @extend .float-left; }
-.float-xs-right { @extend .float-right; }
-.float-xs-none  { @extend .float-none; }
+.float-xs-left {
+  @extend .float-left;
+}
+.float-xs-right {
+  @extend .float-right;
+}
+.float-xs-none {
+  @extend .float-none;
+}
 
 @each $bp in map-keys($grid-breakpoints) {
   .hidden-#{$bp}-up {

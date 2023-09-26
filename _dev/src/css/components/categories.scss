@@ -2,25 +2,23 @@
   @extend .card;
 }
 
-.block-categories{
+.block-categories {
   @extend .card-body;
 }
 
 .block-categories {
-  box-shadow:$card-box-shadow;;
+  box-shadow: $card-box-shadow;
 }
-
-
 
 //block categories
-.block-categories a{
-  color:$body-color;
+.block-categories a {
+  color: $body-color;
 }
-.category-sub__item{
+.category-sub__item {
   display: block;
   width: 100%;
 }
-.category-sub__item--0{
+.category-sub__item--0 {
   border-bottom: 1px solid $border-color;
   padding: $spacer/4 0;
 }
@@ -30,11 +28,11 @@
 .block-categories .collapse-icons .remove {
   display: none;
 }
-.block-categories .collapse-icons[aria-expanded=true] {
-  &.remove{
-  display: block;
+.block-categories .collapse-icons[aria-expanded="true"] {
+  &.remove {
+    display: block;
   }
-  &.add{
+  &.add {
     display: none;
   }
 }

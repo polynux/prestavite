@@ -22,30 +22,31 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  */
-import $ from 'jquery';
+import $ from "jquery";
 
 export default class TopMenu {
-    constructor(el) {
-        this.el = el;
-    }
-    init() {
+  constructor(el) {
+    this.el = el;
+  }
+  init() {
     let self = this;
-      self.el.hoverIntent({
-          over: self.toggleClassSubMenu,
-          out: self.toggleClassSubMenu,
-          selector: ' > li',
-          timeout:100
-      });
-    }
+    self.el.hoverIntent({
+      over: self.toggleClassSubMenu,
+      out: self.toggleClassSubMenu,
+      selector: " > li",
+      timeout: 100,
+    });
+  }
 
-    toggleClassSubMenu(){
-        let _item = $(this);
-        let expanded = _item.attr('aria-expanded');
-        if(typeof expanded !=="undefined"){
-         expanded = (expanded.toLowerCase() === 'true');
-        _item.toggleClass('menu__item--active').attr('aria-expanded',!expanded);
-        $('.menu-sub',_item).attr('aria-expanded',!expanded).attr('aria-hidden',expanded);
-        }
-
+  toggleClassSubMenu() {
+    let _item = $(this);
+    let expanded = _item.attr("aria-expanded");
+    if (typeof expanded !== "undefined") {
+      expanded = expanded.toLowerCase() === "true";
+      _item.toggleClass("menu__item--active").attr("aria-expanded", !expanded);
+      $(".menu-sub", _item)
+        .attr("aria-expanded", !expanded)
+        .attr("aria-hidden", expanded);
     }
+  }
 }

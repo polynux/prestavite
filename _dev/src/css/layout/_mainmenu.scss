@@ -1,14 +1,13 @@
-.menu{
+.menu {
   padding-bottom: $spacer;
-
 }
-.menu-top{
+.menu-top {
   display: flex;
   justify-content: center;
   margin: 0;
   position: relative;
 }
-.menu__item-link--top{
+.menu__item-link--top {
   color: $menu-topitem-color;
   font-weight: 600;
   text-transform: uppercase;
@@ -27,7 +26,7 @@
     left: 0;
     top: 100%;
     z-index: -1;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
   .menu-sub__content > ul {
     padding: 10px;
@@ -44,7 +43,6 @@
   .menu__item--1 {
     padding-right: 10px;
     padding-left: 10px;
-
   }
   .menu__item-link--1 {
     text-transform: uppercase;
@@ -57,83 +55,83 @@
 
 //mobile
 @include media-breakpoint-mobile() {
-  .menu-top{
+  .menu-top {
     flex-direction: column;
     margin-bottom: $spacer;
   }
-  .menu-sub{
+  .menu-sub {
     width: 100%;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
   }
   //remove padding from container class
-  .menu-sub__content{
+  .menu-sub__content {
     padding: 0;
   }
-  .menu__item-link--top{
+  .menu__item-link--top {
     padding: 0;
   }
-  .top-menu-mobile{
+  .top-menu-mobile {
     margin-right: -$modal-inner-padding;
     margin-left: -$modal-inner-padding;
   }
-  .menu__item{
+  .menu__item {
     //padding: $spacer/2;
     border-bottom: 1px solid $menu-item-border-color;
     border-top: 1px solid $menu-item-border-color;
   }
-  .menu__item--top:not(:first-child){
-    border-top:0;
+  .menu__item--top:not(:first-child) {
+    border-top: 0;
   }
   .menu__item--sub:last-child,
-  .menu__item--sub:first-child:not(:last-child){
+  .menu__item--sub:first-child:not(:last-child) {
     border-bottom: 0;
   }
-  .menu__item-header{
+  .menu__item-header {
     display: flex;
     justify-content: space-between;
     padding: $menu-item-padding;
   }
-  .menu__item-link--nosubmenu{
+  .menu__item-link--nosubmenu {
     padding: $menu-item-padding;
     display: block;
   }
-  .menu-sub.show{
+  .menu-sub.show {
     background: $menu-sub-mobile-bg-color;
   }
 
   //increase offset
   .menu__item--1 {
     .menu__item-link--nosubmenu,
-    .menu__item-header{
+    .menu__item-header {
       margin-left: 10px;
     }
   }
   .menu__item--2 {
     .menu__item-link--nosubmenu,
-    .menu__item-header{
+    .menu__item-header {
       margin-left: 20px;
     }
   }
   .menu__item--3 {
     .menu__item-link--nosubmenu,
-    .menu__item-header{
+    .menu__item-header {
       margin-left: 30px;
     }
   }
 }
 
-#mobile_top_menu_wrapper{
-  &.modal{
-    .modal-header{
-      border-bottom:0;
+#mobile_top_menu_wrapper {
+  &.modal {
+    .modal-header {
+      border-bottom: 0;
     }
-    .modal-body{
-      padding-top:0;
+    .modal-body {
+      padding-top: 0;
     }
   }
 }
 
-.menu__collapseicon{
+.menu__collapseicon {
   width: 3rem;
   height: 1.5rem;
   display: block;

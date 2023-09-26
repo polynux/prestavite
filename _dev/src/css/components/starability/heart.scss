@@ -1,9 +1,8 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes heart {
-
   0% {
     transform: translateY(0.5 * $star-size);
     opacity: 1;

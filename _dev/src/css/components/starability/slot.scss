@@ -1,6 +1,6 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 .starability-slot {
   @include starability-base;
@@ -8,6 +8,6 @@
   > input:checked ~ label,
   > input:hover ~ label,
   > input:focus ~ label {
-    transition: background-position .7s;
+    transition: background-position 0.7s;
   }
 }

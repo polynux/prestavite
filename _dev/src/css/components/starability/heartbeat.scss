@@ -1,9 +1,8 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes heartbeat {
-
   0% {
     transform: translateY(0.5 * $star-size);
   }
@@ -46,7 +45,7 @@
   > input:checked + label::after {
     opacity: 1;
     animation-name: heartbeat;
-    animation-timing-function: cubic-bezier(.19,1,.69,1.35);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.69, 1.35);
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }

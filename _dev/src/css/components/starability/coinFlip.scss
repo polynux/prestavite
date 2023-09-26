@@ -1,14 +1,13 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes coinFlip {
-
   0% {
     transform: translateY(0);
     opacity: 0;
   }
-  
+
   25% {
     transform: translateY(-34px);
     opacity: 1;
@@ -33,7 +32,7 @@
   85% {
     transform: translateY(-34px);
     opacity: 1;
-  }  
+  }
 
   100% {
     transform: translateY(0);
@@ -44,7 +43,7 @@
 .starability-coinFlip {
   @include starability-base;
   will-change: contents;
-  
+
   > label::after {
     @include starability-animation-base;
     bottom: 0;

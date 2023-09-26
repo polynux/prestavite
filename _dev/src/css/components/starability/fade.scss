@@ -1,9 +1,8 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes fade {
-
   0% {
     transform: translateY($star-size);
   }

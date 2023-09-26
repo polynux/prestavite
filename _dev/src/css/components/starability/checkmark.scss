@@ -1,9 +1,8 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes checkmark {
-
   0% {
     transform: translateX(-0.5 * $star-size);
   }
@@ -53,7 +52,7 @@
   > input:checked + label::after {
     display: inline-block;
     animation-name: checkmark;
-    animation-duration: .7s;
+    animation-duration: 0.7s;
     animation-fill-mode: forwards;
   }
 }

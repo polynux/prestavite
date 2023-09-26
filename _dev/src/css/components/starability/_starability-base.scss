@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 @mixin starability-base() {
   display: block;
@@ -78,7 +78,7 @@
     background-position: 0 (-$star-size);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       height: $star-size;
@@ -89,7 +89,6 @@
     }
 
     @if ($hover-enabled) {
-
       // This function makes sure the right number of stars is highlighted
       $star-count-highlight: $star-count;
 
@@ -112,7 +111,6 @@
   }
 
   @if ($high-contrast-enabled) {
-
     // To make the rating widget accessible in high contrast, we remove the styling.
     @media screen and (-ms-high-contrast: active) {
       width: auto;
@@ -145,12 +143,15 @@
   }
 }
 
-@mixin starability-animation-base($img-animated: $img-stars-sprite, $img-animated-2x: $img-stars-sprite-2x) {
-  content: ' ';
+@mixin starability-animation-base(
+  $img-animated: $img-stars-sprite,
+  $img-animated-2x: $img-stars-sprite-2x
+) {
+  content: " ";
   position: absolute;
   opacity: 0;
   width: $star-size;
-  height:  $star-size;
+  height: $star-size;
   background-image: $img-animated;
   background-repeat: no-repeat;
 

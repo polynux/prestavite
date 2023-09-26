@@ -1,20 +1,19 @@
-@import '../variables';
-@import '../starability-base';
-@import '../starability-result';
+@import "../variables";
+@import "../starability-base";
+@import "../starability-result";
 
 @keyframes grow-rotate {
-
   0% {
-    transform: scale(1,1) rotate(0deg);
+    transform: scale(1, 1) rotate(0deg);
   }
 
   99% {
-    transform: scale(4,4) rotate(90deg);
+    transform: scale(4, 4) rotate(90deg);
     opacity: 0;
   }
 
   100% {
-    transform: scale(1,1) rotate(0deg);
+    transform: scale(1, 1) rotate(0deg);
     opacity: 0;
   }
 }
