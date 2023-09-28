@@ -11,14 +11,12 @@ import "bootstrap/js/src/tooltip";
 import "./lib/slick.min";
 import "./lib/jquery.hoverIntent.min";
 import SlickSlider from "./components/slick";
-//
 import "./responsive";
 import "./checkout";
 import "./customer";
 import "./listing";
 import "./product";
 import "./cart";
-//
 import Form from "./components/form";
 import TopMenu from "./components/top-menu";
 import "./components/block-cart";
